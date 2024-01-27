@@ -1,4 +1,4 @@
 # demo-code
-this is my first repository
+this is my first GIT repository
 <br>
 Author-SHREY SHARMA
