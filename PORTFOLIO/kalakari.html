@@ -1,0 +1,572 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* Email icon style */
+        .email-icon {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #232323;
+            box-shadow: 0 2px 8px rgba(255, 235, 59, 0.18);
+            border: 2px solid #fff;
+            transition: box-shadow 0.3s, border-color 0.3s, transform 0.2s;
+            text-align: center;
+            line-height: 36px;
+            vertical-align: middle;
+            margin-left: 0.5rem;
+        }
+        .email-icon:hover {
+            box-shadow: 0 4px 18px 0 rgba(255, 208, 0, 0.35), 0 1.5px 6px 0 rgba(255, 235, 59, 0.18);
+            border-color: #ffd600;
+            transform: scale(1.12) rotate(-6deg);
+        }
+        .email-icon svg {
+            fill: #ffd600;
+            width: 22px;
+            height: 22px;
+            margin-top: 7px;
+        }
+        .email-address {
+            color: #ffd600;
+            font-weight: 600;
+            margin-left: 0.4rem;
+            font-size: 1.08rem;
+            vertical-align: middle;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .email-address:hover {
+            color: #fff;
+        }
+        /* WhatsApp icon style */
+        .whatsapp-icon {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #232323;
+            box-shadow: 0 2px 8px rgba(255, 235, 59, 0.18);
+            border: 2px solid #fff;
+            transition: box-shadow 0.3s, border-color 0.3s, transform 0.2s;
+            text-align: center;
+            line-height: 36px;
+            vertical-align: middle;
+            margin-left: 0.5rem;
+        }
+        .whatsapp-icon:hover {
+            box-shadow: 0 4px 18px 0 rgba(37, 211, 102, 0.35), 0 1.5px 6px 0 rgba(255, 235, 59, 0.18);
+            border-color: #25d366;
+            transform: scale(1.12) rotate(6deg);
+        }
+        .whatsapp-icon svg {
+            fill: #25d366;
+            width: 22px;
+            height: 22px;
+            margin-top: 7px;
+        }
+        .whatsapp-number {
+            color: #25d366;
+            font-weight: 600;
+            margin-left: 0.4rem;
+            font-size: 1.08rem;
+            vertical-align: middle;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .whatsapp-number:hover {
+            color: #fff;
+        }
+        /* LinkedIn icon style */
+        .social-icons {
+            margin-top: 0.7rem;
+        }
+        .linkedin-icon {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #232323;
+            box-shadow: 0 2px 8px rgba(255, 235, 59, 0.18);
+            border: 2px solid #fff;
+            transition: box-shadow 0.3s, border-color 0.3s, transform 0.2s;
+            text-align: center;
+            line-height: 36px;
+            vertical-align: middle;
+        }
+        .linkedin-icon:hover {
+            box-shadow: 0 4px 18px 0 rgba(14, 118, 168, 0.35), 0 1.5px 6px 0 rgba(255, 235, 59, 0.18);
+            border-color: #0a66c2;
+            transform: scale(1.12) rotate(-6deg);
+        }
+        .linkedin-icon svg {
+            fill: #0a66c2;
+            width: 22px;
+            height: 22px;
+            margin-top: 7px;
+        }
+        /* Profile photo with yellow shadow and hover effect */
+        .profile-photo {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px #fff, 0 4px 24px 0 rgba(255, 235, 59, 0.55), 0 2px 8px rgba(0,0,0,0.12);
+            margin-bottom: 1rem;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .profile-photo:hover {
+            box-shadow: 0 0 0 6px #ffe082, 0 8px 36px 0 rgba(255, 235, 59, 0.85), 0 4px 16px rgba(0,0,0,0.18);
+            transform: scale(1.06) rotate(-2deg);
+        }
+        /* Section box styling */
+        .section-box {
+            background: #232323;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(255, 0, 0, 0.25), 0 1.5px 6px 0 rgba(255, 0, 0, 0.18);
+            margin-bottom: 2.5rem;
+            padding: 2rem 1.5rem;
+            border: 1.5px solid #400000;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .section-box:hover {
+            box-shadow: 0 16px 48px 0 rgba(255, 0, 0, 0.45), 0 2px 12px 0 rgba(255, 0, 0, 0.28);
+            transform: translateY(-6px) scale(1.02);
+        }
+        .section-box h2 {
+            margin-top: 0;
+        }
+        .project-card {
+            position: relative;
+        }
+        .project-typing {
+            min-height: 60px;
+            margin-bottom: 0.7rem;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: #181818;
+            color: #fff;
+        }
+        header {
+            background: #232323;
+            color: #fff;
+            padding: 2rem 0 1rem 0;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(33, 150, 243, 0.25), 0 1.5px 6px 0 rgba(33, 150, 243, 0.18);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        header:hover {
+            box-shadow: 0 16px 48px 0 rgba(33, 150, 243, 0.45), 0 2px 12px 0 rgba(33, 150, 243, 0.28);
+            transform: translateY(-3px) scale(1.01);
+        }
+        nav {
+            margin: 1rem 0;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #ffe082;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: #232323;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 2rem;
+        }
+        section {
+            margin-bottom: 2.5rem;
+        }
+        h2 {
+            color: #ffe082;
+            margin-bottom: 1rem;
+        }
+        .heading-box {
+            display: inline-block;
+            background: #232323;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px 0 rgba(33, 150, 243, 0.25), 0 1.5px 6px 0 rgba(33, 150, 243, 0.18);
+            padding: 0.5rem 1.5rem;
+            margin-bottom: 1.2rem;
+            border: 1.5px solid #1a237e;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .heading-box:hover {
+            box-shadow: 0 8px 32px 0 rgba(33, 150, 243, 0.45), 0 2px 12px 0 rgba(33, 150, 243, 0.28);
+            transform: translateY(-3px) scale(1.04);
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .project-card {
+            background: #222;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            padding: 1rem;
+            transition: transform 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px) scale(1.03);
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 400px;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 0.7rem;
+            border: 1px solid #444;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: #181818;
+            color: #fff;
+        }
+        .contact-form button {
+            background: #ffe082;
+            color: #181818;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .contact-form button:hover {
+            background: #fff176;
+        }
+        footer {
+            text-align: center;
+            padding: 1.5rem 0 1rem 0;
+            color: #bbb;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+        .header-name-box {
+            display: inline-block;
+            background: #181818;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px 0 rgba(255, 235, 59, 0.25), 0 1.5px 6px 0 rgba(255, 235, 59, 0.18);
+            padding: 0.5rem 2.2rem;
+            margin-bottom: 1.1rem;
+            border: 3px solid #fff;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        }
+    </style>
+</head>
+<body>
+
+
+    
+    <header>
+        <div class="heading-box" style="margin-bottom:1.1rem; display:inline-block;">
+            <div class="header-name-box"><h1 id="header-typing" style="margin:0;"></h1></div>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/shrey-sharma-6b402229a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BuRoM3gixSB2lVY1Q8378bA%3D%3D" class="linkedin-icon" target="_blank" title="LinkedIn">
+                <svg viewBox="0 0 32 32"><path d="M29 0h-26c-1.7 0-3 1.3-3 3v26c0 1.7 1.3 3 3 3h26c1.7 0 3-1.3 3-3v-26c0-1.7-1.3-3-3-3zM9.4 27h-4.1v-13.1h4.1v13.1zM7.3 12.2c-1.3 0-2.1-0.9-2.1-2 0-1.1 0.8-2 2.1-2s2.1 0.9 2.1 2c0 1.1-0.8 2-2.1 2zM27 27h-4.1v-6.7c0-1.7-0.6-2.8-2.1-2.8-1.1 0-1.7 0.7-2 1.4-0.1 0.3-0.1 0.7-0.1 1.1v7h-4.1s0.1-11.4 0-13.1h4.1v1.9c0.5-0.8 1.4-2 3.5-2 2.6 0 4.6 1.7 4.6 5.3v7.9z"/></svg>
+            </a>
+            <a href="https://wa.me/919555744057" class="whatsapp-icon" target="_blank" title="WhatsApp">
+                <svg viewBox="0 0 32 32"><path d="M16 3c-7.2 0-13 5.8-13 13 0 2.3 0.6 4.5 1.7 6.5l-1.8 6.6 6.8-1.8c1.9 1 4 1.6 6.3 1.6 7.2 0 13-5.8 13-13s-5.8-13-13-13zM16 27.4c-2.1 0-4.1-0.5-5.9-1.5l-0.4-0.2-4 1.1 1.1-3.9-0.2-0.4c-1.1-1.8-1.7-3.8-1.7-5.9 0-6.1 5-11 11-11s11 5 11 11-5 11-11 11zM23.1 20.2c-0.3-0.2-1.7-0.8-2-0.9-0.3-0.1-0.5-0.2-0.7 0.2-0.2 0.3-0.8 0.9-1 1.1-0.2 0.2-0.4 0.2-0.7 0.1-0.3-0.2-1.2-0.4-2.3-1.3-0.8-0.7-1.3-1.5-1.5-1.8-0.2-0.3 0-0.5 0.1-0.7 0.1-0.1 0.2-0.3 0.3-0.4 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0-0.3 0-0.4s-0.7-1.7-1-2.3c-0.3-0.6-0.5-0.5-0.7-0.5-0.2 0-0.3 0-0.4 0-0.1 0-0.3 0-0.4 0-0.1 0-0.3 0-0.4 0.2-0.1 0.2-0.5 0.5-0.5 1.2 0 0.7 0.5 1.4 0.6 1.5 0.1 0.1 1.1 1.7 2.7 2.3 1.6 0.6 1.6 0.4 1.9 0.4 0.3 0 0.9-0.4 1.1-0.8 0.1-0.2 0.1-0.3 0.1-0.4 0-0.1 0-0.2-0.1-0.3z"/></svg>
+            </a>
+            <a href="mailto:shreysharma955572gmail.com" class="email-icon" title="Email">
+                <svg viewBox="0 0 32 32"><path d="M27 6H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h22c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 2v.5l-11 8.5-11-8.5V8h22zm0 16H5V10.7l10.3 8c.4.3 1 .3 1.4 0L27 10.7V24z"/></svg>
+            </a>
+        </div>
+        <p id="header-subtitle-typing"></p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section id="achievements" class="section-box">
+            <div class="heading-box"><h2 style="margin:0;">Achievements</h2></div>
+            <p style="color:#ffe082; font-weight:500; margin-bottom:0.7rem;">I have participated in national-level hackathons, earned certifications from AWS and Tata Forage, and maintained a strong academic record. These achievements reflect my dedication to learning, technical growth, and academic excellence.</p>
+            <ul style="list-style: disc; padding-left: 1.5rem;">
+                <li>Certificate of Participation in Hackathon</li>
+                <li>AWS Certification</li>
+                <li>Tata Forage Certification</li>
+            </ul>
+        </section>
+        <section id="about" class="section-box">
+            <div class="heading-box"><h2 style="margin:0;">About Me</h2></div>
+            <div style="display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
+                <img src="shrey.jpg" alt="Shrey Sharma" class="profile-photo">
+                <div style="flex: 1; min-width: 220px;">
+                    <p id="about-typing" style="min-height: 90px;"></p>
+                    <div class="heading-box" style="margin-bottom:1.1rem;"><h3 style="margin:0;">Skills</h3></div>
+                    <div class="heading-box" style="background:#232323; margin-bottom:0; padding:1rem 1.5rem;">
+                <div id="skills-typing" style="min-height: 180px; color:#ffe082; font-weight:500;"></div>
+                <div id="skills-static" style="display:none;">
+                    I have a strong foundation in programming languages, web development, and modern frameworks. My skills include both frontend and backend technologies, enabling me to build complete, responsive, and interactive web applications.<br><br>
+                    C, C++ – Core programming and problem-solving<br>
+                    JavaScript (JS) – Dynamic web development<br>
+                    Node.js – Backend/server-side development<br>
+                    MongoDB – NoSQL database management<br>
+                    Three.js – 3D graphics and visualizations<br>
+                    React.js – Modern frontend UI development<br>
+                    SQL – Relational database management
+                </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="section-box">
+            <div class="heading-box"><h2 style="margin:0;">Projects</h2></div>
+            <p id="projects-typing" style="min-height: 60px;"></p>
+            <div class="projects">
+                <div class="project-card">
+                    <div class="heading-box"><h3 style="margin:0;">Technical Website</h3></div>
+                    <p id="project1-typing" class="project-typing"></p>
+                    <p style="display:none;" id="project1-static">This is a modern technical website designed and developed to provide resources, tutorials, and articles on programming and technology trends. The site features a responsive layout, interactive UI, and a blog section for sharing knowledge.<br><br><strong>Technologies used:</strong> HTML, CSS, JavaScript, Node.js, MongoDB, React.js, Three.js, SQL.</p>
+                    <a href="#" target="_blank" class="view-project-link"></a>
+                </div>
+                <div class="project-card">
+                    <div class="heading-box"><h3 style="margin:0;">Technical Services Website</h3></div>
+                    <p id="project2-typing" class="project-typing"></p>
+                    <p style="display:none;" id="project2-static">A professional business website for electronic repair services, featuring animated hero sections, customer reviews, WhatsApp integration, and a registration form for service requests. The site demonstrates advanced CSS animations, interactive UI, and a mobile-friendly design.<br><br><strong>Technologies used:</strong> HTML, CSS, JavaScript.<br><strong>Features:</strong> Sunrise animation, animated TV, customer reviews, WhatsApp quick contact, and more.</p>
+                    <a href="new.html" target="_blank" class="view-project-link"></a>
+                </div>
+                <div class="project-card">
+                    <div class="heading-box"><h3 style="margin:0;">Spotify Clone</h3></div>
+                    <p id="project3-typing" class="project-typing"></p>
+                    <p style="display:none;" id="project3-static">A music streaming web application inspired by Spotify. Users can browse, search, and play songs, create playlists, and enjoy a modern, responsive UI. The project demonstrates audio streaming, playlist management, and dynamic UI updates.<br><br><strong>Technologies used:</strong> HTML, CSS, JavaScript, React.js, Node.js, MongoDB.</p>
+                    <a href="#" target="_blank" class="view-project-link"></a>
+                </div>
+                <div class="project-card">
+                    <div class="heading-box"><h3 style="margin:0;">Flipkart Clone</h3></div>
+                    <p id="project4-typing" class="project-typing"></p>
+                    <p style="display:none;" id="project4-static">An e-commerce website inspired by Flipkart, featuring product listings, search, cart, and checkout functionality. The site is fully responsive and demonstrates user authentication, product management, and order processing.<br><br><strong>Technologies used:</strong> HTML, CSS, JavaScript, React.js, Node.js, MongoDB, SQL.</p>
+                    <a href="#" target="_blank" class="view-project-link"></a>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="section-box">
+            <div class="heading-box"><h2 style="margin:0;">Contact</h2></div>
+            <form class="contact-form" action="mailto:your.email@example.com" method="POST" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div style="margin-top:1.2rem; text-align:center;">
+                <a href="https://wa.me/919555744057" target="_blank" style="display:inline-block; background:#232323; color:#25d366; border-radius:24px; padding:0.7rem 1.5rem; font-weight:600; font-size:1.08rem; text-decoration:none; box-shadow:0 2px 8px rgba(37,211,102,0.18); border:2px solid #25d366; transition:background 0.2s, color 0.2s, box-shadow 0.2s;">
+                    <svg style="vertical-align:middle; margin-right:0.5rem;" width="22" height="22" viewBox="0 0 32 32"><path fill="#25d366" d="M16 3c-7.2 0-13 5.8-13 13 0 2.3 0.6 4.5 1.7 6.5l-1.8 6.6 6.8-1.8c1.9 1 4 1.6 6.3 1.6 7.2 0 13-5.8 13-13s-5.8-13-13-13zM16 27.4c-2.1 0-4.1-0.5-5.9-1.5l-0.4-0.2-4 1.1 1.1-3.9-0.2-0.4c-1.1-1.8-1.7-3.8-1.7-5.9 0-6.1 5-11 11-11s11 5 11 11-5 11-11 11zM23.1 20.2c-0.3-0.2-1.7-0.8-2-0.9-0.3-0.1-0.5-0.2-0.7 0.2-0.2 0.3-0.8 0.9-1 1.1-0.2 0.2-0.4 0.2-0.7 0.1-0.3-0.2-1.2-0.4-2.3-1.3-0.8-0.7-1.3-1.5-1.5-1.8-0.2-0.3 0-0.5 0.1-0.7 0.1-0.1 0.2-0.3 0.3-0.4 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0-0.3 0-0.4s-0.7-1.7-1-2.3c-0.3-0.6-0.5-0.5-0.7-0.5-0.2 0-0.3 0-0.4 0-0.1 0-0.3 0-0.4 0-0.1 0-0.3 0-0.4 0.2-0.1 0.2-0.5 0.5-0.5 1.2 0 0.7 0.5 1.4 0.6 1.5 0.1 0.1 1.1 1.7 2.7 2.3 1.6 0.6 1.6 0.4 1.9 0.4 0.3 0 0.9-0.4 1.1-0.8 0.1-0.2 0.1-0.3 0.1-0.4 0-0.1 0-0.2-0.1-0.3z"/></svg>
+                    Chat with me on WhatsApp
+                </a>
+            </div>
+        </section>
+    </div>
+    <footer>
+        &copy; 2025 Shrey Sharma. All rights reserved.
+    </footer>
+</body>
+<script>
+
+// Typing animation for About, Projects, and each Project card (looping)
+window.addEventListener('DOMContentLoaded', function() {
+    // Header Typing Animation
+    const headerText = "Shrey Sharma";
+    const headerTyping = document.getElementById('header-typing');
+    let hidx = 0;
+    function typeHeaderChar() {
+        if (hidx <= headerText.length) {
+            headerTyping.innerHTML = headerText.slice(0, hidx) + '<span style="border-right:2px solid #ffe082;">&nbsp;</span>';
+            hidx++;
+            setTimeout(typeHeaderChar, 22 + Math.random() * 32);
+        } else {
+            headerTyping.innerHTML = headerText;
+            setTimeout(() => {
+                hidx = 0;
+                headerTyping.innerHTML = '';
+                setTimeout(typeHeaderChar, 900);
+            }, 1800);
+        }
+    }
+    typeHeaderChar();
+
+    // Header Subtitle Typing Animation (loops: subtitle, then name)
+    const subtitleText = "Full Stack Developer | BCA Student at KIT College";
+    const subtitleTyping = document.getElementById('header-subtitle-typing');
+    let sidx = 0;
+    let showName = false;
+    function typeSubtitleChar() {
+        let text = showName ? headerText : subtitleText;
+        if (sidx <= text.length) {
+            subtitleTyping.innerHTML = text.slice(0, sidx) + '<span style="border-right:2px solid #ffe082;">&nbsp;</span>';
+            sidx++;
+            setTimeout(typeSubtitleChar, 18 + Math.random() * 32);
+        } else {
+            subtitleTyping.innerHTML = text;
+            setTimeout(() => {
+                sidx = 0;
+                showName = !showName;
+                subtitleTyping.innerHTML = '';
+                setTimeout(typeSubtitleChar, 700);
+            }, 1600);
+        }
+    }
+    typeSubtitleChar();
+
+    // About Section Typing
+    const aboutText = "I'm Shrey Sharma, a full stack developer and BCA student at KIT College with a CGPA of 8+. I enjoy building modern, user-friendly websites and web apps, and I'm passionate about learning new technologies and improving my skills. My projects showcase my expertise in both frontend and backend development, utilizing technologies like React.js, Node.js, and MongoDB . I'm always looking for opportunities to collaborate and learn from others. Let's connect!";
+    const aboutTyping = document.getElementById('about-typing');
+    let idx = 0;
+    function typeChar() {
+        if (idx <= aboutText.length) {
+            aboutTyping.innerHTML = aboutText.slice(0, idx) + '<span style="border-right:2px solid #ffe082;">&nbsp;</span>';
+            idx++;
+            setTimeout(typeChar, 18 + Math.random() * 35);
+        } else {
+            aboutTyping.innerHTML = aboutText;
+            setTimeout(() => {
+                idx = 0;
+                aboutTyping.innerHTML = '';
+                setTimeout(typeChar, 600);
+            }, 1800);
+        }
+    }
+    typeChar();
+
+    // Skills Typing Animation
+    const skillsText = document.getElementById('skills-static').innerHTML.replace(/<br>/g, '\n');
+    const skillsTyping = document.getElementById('skills-typing');
+    let skidx = 0;
+    function typeSkillsChar() {
+        if (skidx <= skillsText.length) {
+            let display = skillsText.slice(0, skidx).replace(/\n/g, '<br>');
+            skillsTyping.innerHTML = display + '<span style="border-right:2px solid #ffe082;">&nbsp;</span>';
+            skidx++;
+            setTimeout(typeSkillsChar, 16 + Math.random() * 28);
+        } else {
+            skillsTyping.innerHTML = skillsText.replace(/\n/g, '<br>');
+            setTimeout(() => {
+                skidx = 0;
+                skillsTyping.innerHTML = '';
+                setTimeout(typeSkillsChar, 900);
+            }, 2000);
+        }
+    }
+    typeSkillsChar();
+    // Projects Section Typing
+    const projectsText = "Here are some of my best projects, including web apps, business sites, and clones of popular platforms. Each project demonstrates my skills in full stack development, UI/UX, and modern web technologies.";
+    const projectsTyping = document.getElementById('projects-typing');
+    let pidx = 0;
+    function typeProjectsChar() {
+        if (pidx <= projectsText.length) {
+            projectsTyping.innerHTML = projectsText.slice(0, pidx) + '<span style="border-right:2px solid #ffe082;">&nbsp;</span>';
+            pidx++;
+            setTimeout(typeProjectsChar, 18 + Math.random() * 35);
+        } else {
+            projectsTyping.innerHTML = projectsText;
+            setTimeout(() => {
+                pidx = 0;
+                projectsTyping.innerHTML = '';
+                setTimeout(typeProjectsChar, 600);
+            }, 1800);
+        }
+    }
+    typeProjectsChar();
+
+    // Project 1 Typing
+    const project1Text = document.getElementById('project1-static').innerHTML;
+    const project1Typing = document.getElementById('project1-typing');
+    let pr1idx = 0;
+    function typeProject1Char() {
+        if (pr1idx <= project1Text.length) {
+            project1Typing.innerHTML = project1Text.slice(0, pr1idx) + '<span style="border-right:2px solid #ffe082;">&nbsp;</span>';
+            pr1idx++;
+            setTimeout(typeProject1Char, 14 + Math.random() * 28);
+        } else {
+            project1Typing.innerHTML = project1Text;
+            setTimeout(() => {
+                pr1idx = 0;
+                project1Typing.innerHTML = '';
+                setTimeout(typeProject1Char, 600);
+            }, 1800);
+        }
+    }
+    typeProject1Char();
+
+    // Project 2 Typing
+    const project2Text = document.getElementById('project2-static').innerHTML;
+    const project2Typing = document.getElementById('project2-typing');
+    let pr2idx = 0;
+    function typeProject2Char() {
+        if (pr2idx <= project2Text.length) {
+            project2Typing.innerHTML = project2Text.slice(0, pr2idx) + '<span style="border-right:2px solid #ffe082;">&nbsp;</span>';
+            pr2idx++;
+            setTimeout(typeProject2Char, 14 + Math.random() * 28);
+        } else {
+            project2Typing.innerHTML = project2Text;
+            setTimeout(() => {
+                pr2idx = 0;
+                project2Typing.innerHTML = '';
+                setTimeout(typeProject2Char, 600);
+            }, 1800);
+        }
+    }
+    typeProject2Char();
+
+    // Project 3 Typing
+    const project3Text = document.getElementById('project3-static').innerHTML;
+    const project3Typing = document.getElementById('project3-typing');
+    let pr3idx = 0;
+    function typeProject3Char() {
+        if (pr3idx <= project3Text.length) {
+            project3Typing.innerHTML = project3Text.slice(0, pr3idx) + '<span style="border-right:2px solid #ffe082;">&nbsp;</span>';
+            pr3idx++;
+            setTimeout(typeProject3Char, 14 + Math.random() * 28);
+        } else {
+            project3Typing.innerHTML = project3Text;
+            setTimeout(() => {
+                pr3idx = 0;
+                project3Typing.innerHTML = '';
+                setTimeout(typeProject3Char, 600);
+            }, 1800);
+        }
+    }
+    typeProject3Char();
+
+    // Project 4 Typing
+    const project4Text = document.getElementById('project4-static').innerHTML;
+    const project4Typing = document.getElementById('project4-typing');
+    let pr4idx = 0;
+    function typeProject4Char() {
+        if (pr4idx <= project4Text.length) {
+            project4Typing.innerHTML = project4Text.slice(0, pr4idx) + '<span style="border-right:2px solid #ffe082;">&nbsp;</span>';
+            pr4idx++;
+            setTimeout(typeProject4Char, 14 + Math.random() * 28);
+        } else {
+            project4Typing.innerHTML = project4Text;
+            setTimeout(() => {
+                pr4idx = 0;
+                project4Typing.innerHTML = '';
+                setTimeout(typeProject4Char, 600);
+            }, 1800);
+        }
+    }
+    typeProject4Char();
+});
+
+</script>
+</html>
